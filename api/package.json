@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "/usr/oauth2/node_modules/.bin/nodemon index.js",
-    "start": "node /usr/oauth2/api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "/usr/oauth2/node_modules/.bin/sequelize db:migrate"
+    "start": "sequelize db:migrate && node /usr/oauth2/api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "oauth2",

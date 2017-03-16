@@ -47,7 +47,7 @@ server.exchange(oauth2orize.exchange.code(
       clientId: authCode.clientId,
       userId: authCode.userId
     }).then(token => {
-      callback(null, token);
+      callback(null, token.value);
     }).catch(err => callback(err));
   });
 }));

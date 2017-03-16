@@ -3,14 +3,14 @@
     "username": "oauth2",
     "password": "oauth2",
     "database": "oauth2",
-    "host": "db.oauth2.dkr",
+    "host": "db.oauth2",
     "dialect": "mysql"
   },
   "production": {
     "username": "oauth2",
     "password": "oauth2",
     "database": "oauth2",
-    "host": "db.oauth2.dkr",
+    "host": "db.oauth2",
     "dialect": "mysql"
   }
 }
