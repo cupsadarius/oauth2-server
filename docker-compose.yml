@@ -1,0 +1,36 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      default:
+        aliases:
+          - db.oauth2
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: oauth2
+      MYSQL_PASSWORD: oauth2
+      MYSQL_DATABASE: oauth2
+
+  api:
+    build:
+      context: ./api
+    ports:
+      - 80:80
+    depends_on:
+      - mysql
+    networks:
+      - default
+
+volumes:
+  database:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
